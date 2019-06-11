@@ -37,8 +37,10 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+set_global_assignment -name DEVICE 5CGXFC5C6F27C7
 set_global_assignment -name TOP_LEVEL_ENTITY contador
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:13:58  JUNE 11, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
