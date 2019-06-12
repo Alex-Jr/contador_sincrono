@@ -1,5 +1,5 @@
 Analysis & Synthesis report for contador
-Tue Jun 11 09:08:02 2019
+Tue Jun 11 21:42:18 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,14 +42,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 11 09:08:02 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 11 21:42:18 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; contador                                    ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 8                                           ;
-; Total pins                      ; 8                                           ;
+; Total registers                 ; 48                                          ;
+; Total pins                      ; 29                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -180,25 +180,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 9           ;
+; Estimate of Logic utilization (ALMs needed) ; 29          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 16          ;
+; Combinational ALUT usage for logic          ; 52          ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 1           ;
-;     -- 5 input functions                    ; 2           ;
-;     -- 4 input functions                    ; 11          ;
-;     -- <=3 input functions                  ; 2           ;
+;     -- 6 input functions                    ; 5           ;
+;     -- 5 input functions                    ; 3           ;
+;     -- 4 input functions                    ; 34          ;
+;     -- <=3 input functions                  ; 10          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 8           ;
+; Dedicated logic registers                   ; 48          ;
 ;                                             ;             ;
-; I/O pins                                    ; 8           ;
+; I/O pins                                    ; 29          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; contagem[0] ;
-; Maximum fan-out                             ; 11          ;
-; Total fan-out                               ; 94          ;
-; Average fan-out                             ; 2.35        ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 48          ;
+; Total fan-out                               ; 385         ;
+; Average fan-out                             ; 2.44        ;
 +---------------------------------------------+-------------+
 
 
@@ -207,7 +207,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |contador                  ; 16 (16)             ; 8 (8)                     ; 0                 ; 0          ; 8    ; 0            ; |contador           ; contador    ; work         ;
+; |contador                  ; 52 (52)             ; 48 (48)                   ; 0                 ; 0          ; 29   ; 0            ; |contador           ; contador    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -217,12 +217,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 48    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -232,19 +232,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 8                           ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 17                          ;
-;     normal            ; 17                          ;
+; arriav_ff             ; 48                          ;
+;     ENA               ; 29                          ;
+;     plain             ; 19                          ;
+; arriav_lcell_comb     ; 52                          ;
+;     normal            ; 52                          ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 11                          ;
-;         5 data inputs ; 2                           ;
-;         6 data inputs ; 1                           ;
-; boundary_port         ; 8                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 34                          ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 5                           ;
+; boundary_port         ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -263,25 +265,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Jun 11 09:07:44 2019
+    Info: Processing started: Tue Jun 11 21:41:56 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off contador -c contador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-comportamental File: C:/projetos/vhdl/contador.vhd Line: 14
+    Info (12022): Found design unit 1: contador-comportamental File: C:/projetos/vhdl/contador.vhd Line: 17
     Info (12023): Found entity 1: contador File: C:/projetos/vhdl/contador.vhd Line: 5
 Info (12127): Elaborating entity "contador" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 16 logic cells
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 52 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4874 megabytes
-    Info: Processing ended: Tue Jun 11 09:08:02 2019
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Tue Jun 11 21:42:18 2019
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:45
 
 

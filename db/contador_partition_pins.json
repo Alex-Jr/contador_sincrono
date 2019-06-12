@@ -4,31 +4,115 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "LED_out[6]",
+					"name" : "LED00_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[5]",
+					"name" : "LED00_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[4]",
+					"name" : "LED00_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[3]",
+					"name" : "LED00_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[2]",
+					"name" : "LED00_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[1]",
+					"name" : "LED00_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "LED_out[0]",
+					"name" : "LED00_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED01_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED10_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED11_out[0]",
 					"strict" : false
 				},
 				{
