@@ -118,6 +118,10 @@
 				{
 					"name" : "clock",
 					"strict" : false
+				},
+				{
+					"name" : "switch[0]",
+					"strict" : false
 				}
 			]
 		}

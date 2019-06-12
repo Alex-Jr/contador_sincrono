@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {contador.vho}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:32:14 on Jun 11,2019
+# Start time: 22:02:08 on Jun 11,2019
 # vcom -reportprogress 300 -93 -work work contador.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -26,12 +26,12 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity contador
 # -- Compiling architecture structure of contador
-# End time: 21:32:14 on Jun 11,2019, Elapsed time: 0:00:00
+# End time: 22:02:08 on Jun 11,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vsim work.contador
 # vsim work.contador 
-# Start time: 21:32:16 on Jun 11,2019
+# Start time: 22:02:16 on Jun 11,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -47,14 +47,13 @@ vsim work.contador
 # Loading cyclonev.cyclonev_io_obuf(arch)
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading cyclonev.cyclonev_clkena(behavior)
-# Loading altera.dffeas(vital_dffeas)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
-# ** Warning: Design size of 19205 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Loading altera.dffeas(vital_dffeas)
+# ** Warning: Design size of 24963 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000000ps sim:/contador/clock
+wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 100000ps sim:/contador/clock
 # Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
-add wave -position insertpoint  \
-sim:/contador/clockcounter
+wave create -driver freeze -pattern clock -initialvalue U -period 10000ps -dutycycle 50 -range 0 0 -starttime 0ps -endtime 100000ps sim:/contador/switch
 add wave -position insertpoint  \
 sim:/contador/contagem00
 add wave -position insertpoint  \
@@ -63,14 +62,11 @@ add wave -position insertpoint  \
 sim:/contador/contagem10
 add wave -position insertpoint  \
 sim:/contador/contagem11
-add wave -position insertpoint  \
-sim:/contador/LED00_out
-add wave -position insertpoint  \
-sim:/contador/LED01_out
-add wave -position insertpoint  \
-sim:/contador/LED10_out
-add wave -position insertpoint  \
-sim:/contador/LED11_out
 run -all
-# End time: 21:34:56 on Jun 11,2019, Elapsed time: 0:02:40
-# Errors: 0, Warnings: 1
+wave create -driver freeze -pattern clock -initialvalue {Not Logged} -period 250ps -dutycycle 50 -range 0 0 -starttime 0ps -endtime 100000ps sim:/contador/switch
+# Value length (3) does not equal array index length (1).
+# 
+#Invalid value to -initialvalue switch: Not Logged
+# 
+# End time: 22:18:00 on Jun 11,2019, Elapsed time: 0:15:44
+# Errors: 1, Warnings: 1

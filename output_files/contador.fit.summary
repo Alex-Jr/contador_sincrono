@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Jun 11 21:31:43 2019
+Fitter Status : Successful - Tue Jun 11 22:01:36 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : contador
 Top-level Entity Name : contador
 Family : Cyclone V
 Device : 5CGXFC5C6F27C7
 Timing Models : Final
-Logic utilization (in ALMs) : 22 / 29,080 ( < 1 % )
-Total registers : 46
-Total pins : 29 / 364 ( 8 % )
+Logic utilization (in ALMs) : 34 / 29,080 ( < 1 % )
+Total registers : 50
+Total pins : 30 / 364 ( 8 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,567,040 ( 0 % )
 Total RAM Blocks : 0 / 446 ( 0 % )
