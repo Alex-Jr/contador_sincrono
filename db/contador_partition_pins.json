@@ -120,7 +120,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[0]",
+					"name" : "switch",
 					"strict" : false
 				}
 			]

@@ -18,7 +18,7 @@ Sim dir               :  simulation\modelsim
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/intelfpga_lite/17.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File contador_run_msim_gate_vhdl.do already exists - backing up current file as contador_run_msim_gate_vhdl.do.bak9
+Warning: File contador_run_msim_gate_vhdl.do already exists - backing up current file as contador_run_msim_gate_vhdl.do.bak11
 Probing transcript
 ModelSim-Altera Info: # Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
 ModelSim-Altera Info: # do contador_run_msim_gate_vhdl.do
@@ -34,7 +34,7 @@ ModelSim-Altera Info: # Modifying modelsim.ini
 ModelSim-Altera Info: # 
 ModelSim-Altera Info: # vcom -93 -work work {contador.vho}
 ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-ModelSim-Altera Info: # Start time: 22:02:08 on Jun 11,2019
+ModelSim-Altera Info: # Start time: 21:41:06 on Jun 12,2019
 ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work contador.vho 
 ModelSim-Altera Info: # -- Loading package STANDARD
 ModelSim-Altera Info: # -- Loading package TEXTIO
@@ -48,12 +48,12 @@ ModelSim-Altera Info: # -- Loading package cyclonev_atom_pack
 ModelSim-Altera Info: # -- Loading package cyclonev_components
 ModelSim-Altera Info: # -- Compiling entity contador
 ModelSim-Altera Info: # -- Compiling architecture structure of contador
-ModelSim-Altera Info: # End time: 22:02:08 on Jun 11,2019, Elapsed time: 0:00:00
+ModelSim-Altera Info: # End time: 21:41:07 on Jun 12,2019, Elapsed time: 0:00:01
 ModelSim-Altera Info: # Errors: 0, Warnings: 0
 ModelSim-Altera Info: # 
 ModelSim-Altera Info: vsim work.contador
 ModelSim-Altera Info: # vsim work.contador 
-ModelSim-Altera Info: # Start time: 22:02:16 on Jun 11,2019
+ModelSim-Altera Info: # Start time: 21:41:08 on Jun 12,2019
 ModelSim-Altera Info: # Loading std.standard
 ModelSim-Altera Info: # Loading std.textio(body)
 ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
@@ -69,27 +69,15 @@ ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_io_obuf(arch)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_io_ibuf(arch)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_clkena(behavior)
-ModelSim-Altera Info: # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
-ModelSim-Altera Warning: # ** Warning: Design size of 24963 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+ModelSim-Altera Info: # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Warning: # ** Warning: Design size of 34139 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 ModelSim-Altera Info: # Expect performance to be adversely affected.
-ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 100000ps sim:/contador/clock
+ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/clock
 ModelSim-Altera Info: # Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
-ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue U -period 10000ps -dutycycle 50 -range 0 0 -starttime 0ps -endtime 100000ps sim:/contador/switch
 ModelSim-Altera Info: add wave -position insertpoint  \
 ModelSim-Altera Info: sim:/contador/contagem00
-ModelSim-Altera Info: add wave -position insertpoint  \
-ModelSim-Altera Info: sim:/contador/contagem01
-ModelSim-Altera Info: add wave -position insertpoint  \
-ModelSim-Altera Info: sim:/contador/contagem10
-ModelSim-Altera Info: add wave -position insertpoint  \
-ModelSim-Altera Info: sim:/contador/contagem11
 ModelSim-Altera Info: run -all
-ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue {Not Logged} -period 250ps -dutycycle 50 -range 0 0 -starttime 0ps -endtime 100000ps sim:/contador/switch
-ModelSim-Altera Info: # Value length (3) does not equal array index length (1).
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: #Invalid value to -initialvalue switch: Not Logged
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # End time: 22:18:00 on Jun 11,2019, Elapsed time: 0:15:44
-ModelSim-Altera Info: # Errors: 1, Warnings: 1
+ModelSim-Altera Info: # End time: 21:42:03 on Jun 12,2019, Elapsed time: 0:00:55
+ModelSim-Altera Info: # Errors: 0, Warnings: 1
 Info: NativeLink simulation flow was successful
