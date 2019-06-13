@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "06/12/2019 21:34:49"
+-- Generated on "06/13/2019 00:02:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -38,6 +38,7 @@ SIGNAL LED00_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED01_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED10_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED11_out : STD_LOGIC_VECTOR(0 TO 6);
+SIGNAL reset : STD_LOGIC;
 SIGNAL switch : STD_LOGIC;
 COMPONENT contador
 	PORT (
@@ -46,6 +47,7 @@ COMPONENT contador
 	LED01_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED10_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED11_out : OUT STD_LOGIC_VECTOR(0 TO 6);
+	reset : IN STD_LOGIC;
 	switch : IN STD_LOGIC
 	);
 END COMPONENT;
@@ -58,6 +60,7 @@ BEGIN
 	LED01_out => LED01_out,
 	LED10_out => LED10_out,
 	LED11_out => LED11_out,
+	reset => reset,
 	switch => switch
 	);
 
@@ -66,9 +69,9 @@ t_prcs_clock: PROCESS
 BEGIN
 LOOP
 	clock <= '0';
-	WAIT FOR 5000 ps;
+	WAIT FOR 1250 ps;
 	clock <= '1';
-	WAIT FOR 5000 ps;
+	WAIT FOR 1250 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clock;
@@ -84,4 +87,16 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_switch;
+
+-- reset
+t_prcs_reset: PROCESS
+BEGIN
+LOOP
+	reset <= '0';
+	WAIT FOR 250000 ps;
+	reset <= '1';
+	WAIT FOR 250000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
+END PROCESS t_prcs_reset;
 END contador_arch;

@@ -664,7 +664,7 @@ VCCIO4A                      : U18       : power  :                   : 1.2V    
 switch                       : U19       : input  : 2.5 V             :         : 5A        : N              
 LED10_out[2]                 : U20       : output : 3.3-V LVTTL       :         : 5A        : Y              
 VCCPD5A                      : U21       : power  :                   : 3.3V    : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5A        :                
+reset                        : U22       : input  : 2.5 V             :         : 5A        : N              
 GND                          : U23       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U24       :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U25       :        :                   :         : 5B        :                

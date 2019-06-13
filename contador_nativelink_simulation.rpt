@@ -34,7 +34,7 @@ ModelSim-Altera Info: # Modifying modelsim.ini
 ModelSim-Altera Info: # 
 ModelSim-Altera Info: # vcom -93 -work work {contador.vho}
 ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-ModelSim-Altera Info: # Start time: 21:41:06 on Jun 12,2019
+ModelSim-Altera Info: # Start time: 23:31:56 on Jun 12,2019
 ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work contador.vho 
 ModelSim-Altera Info: # -- Loading package STANDARD
 ModelSim-Altera Info: # -- Loading package TEXTIO
@@ -48,12 +48,12 @@ ModelSim-Altera Info: # -- Loading package cyclonev_atom_pack
 ModelSim-Altera Info: # -- Loading package cyclonev_components
 ModelSim-Altera Info: # -- Compiling entity contador
 ModelSim-Altera Info: # -- Compiling architecture structure of contador
-ModelSim-Altera Info: # End time: 21:41:07 on Jun 12,2019, Elapsed time: 0:00:01
+ModelSim-Altera Info: # End time: 23:31:56 on Jun 12,2019, Elapsed time: 0:00:00
 ModelSim-Altera Info: # Errors: 0, Warnings: 0
 ModelSim-Altera Info: # 
 ModelSim-Altera Info: vsim work.contador
 ModelSim-Altera Info: # vsim work.contador 
-ModelSim-Altera Info: # Start time: 21:41:08 on Jun 12,2019
+ModelSim-Altera Info: # Start time: 23:34:58 on Jun 12,2019
 ModelSim-Altera Info: # Loading std.standard
 ModelSim-Altera Info: # Loading std.textio(body)
 ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
@@ -69,15 +69,92 @@ ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_io_obuf(arch)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_io_ibuf(arch)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_clkena(behavior)
-ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
 ModelSim-Altera Info: # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
-ModelSim-Altera Warning: # ** Warning: Design size of 34139 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
+ModelSim-Altera Warning: # ** Warning: Design size of 34069 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 ModelSim-Altera Info: # Expect performance to be adversely affected.
-ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/clock
+ModelSim-Altera Info: # .main_pane.wave.interior.cs.body.pw.wf
 ModelSim-Altera Info: # Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+ModelSim-Altera Error: # ** Error: /contador/reset already exists in the wave, cannot add twice
+ModelSim-Altera Info: # Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+ModelSim-Altera Info: # See Command Reference manual for pattern specific <args>
+ModelSim-Altera Info: # Error in macro C:\projetos\vhdl\simulation\modelsim\wave.do line 6
+ModelSim-Altera Info: # /contador/reset already exists in the wave, cannot add twice
+ModelSim-Altera Info: # Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+ModelSim-Altera Info: # See Command Reference manual for pattern specific <args>
+ModelSim-Altera Info: #     while executing
+ModelSim-Altera Info: # "add wave -editable 1 -driver freeze -pattern clock -initialvalue 1 -period 9000ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/reset"
+ModelSim-Altera Info: #     ("eval" body line 1)
+ModelSim-Altera Info: #     invoked from within
+ModelSim-Altera Info: # "eval add wave -editable 1 $args"
+ModelSim-Altera Info: #     (procedure "wave_edit_create" line 2)
+ModelSim-Altera Info: #     invoked from within
+ModelSim-Altera Info: # "wave_edit_create -driver freeze -pattern clock -initialvalue 1 -period 9000ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/reset"
+ModelSim-Altera Info: #     ("eval" body line 1)
+ModelSim-Altera Info: #     invoked from within
+ModelSim-Altera Info: # "eval $procname $args"
+ModelSim-Altera Info: #     (procedure "wave_edit_command" line 8)
+ModelSim-Altera Info: #     invoked from within
+ModelSim-Altera Info: # "wave_edit_command create {*}$args"
+ModelSim-Altera Info: #     (procedure "::wave::create" line 3)
+ModelSim-Altera Info: #     invoked from within
+ModelSim-Altera Info: # "wave create -driver freeze -pattern clock -initialvalue 1 -period 9000ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/reset "
+ModelSim-Altera Info: run -all
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Warning: # ** Warning: Design size of 16789 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+ModelSim-Altera Info: # Expect performance to be adversely affected.
 ModelSim-Altera Info: add wave -position insertpoint  \
 ModelSim-Altera Info: sim:/contador/contagem00
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/contador/contagem01
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/contador/contagem10
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/contador/contagem11
 ModelSim-Altera Info: run -all
-ModelSim-Altera Info: # End time: 21:42:03 on Jun 12,2019, Elapsed time: 0:00:55
-ModelSim-Altera Info: # Errors: 0, Warnings: 1
-Info: NativeLink simulation flow was successful
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Warning: # ** Warning: Design size of 16789 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+ModelSim-Altera Info: # Expect performance to be adversely affected.
+ModelSim-Altera Info: restart -f
+ModelSim-Altera Warning: # ** Warning: Design size of 16789 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+ModelSim-Altera Info: # Expect performance to be adversely affected.
+ModelSim-Altera Info: wave create -driver freeze -pattern clock -initialvalue U -period 3000ps -dutycycle 50 -starttime 0ps -endtime 10000ps sim:/contador/reset
+ModelSim-Altera Info: add wave -position 2 -format Logic -height 17 -editable 2 Edit:/contador/reset
+ModelSim-Altera Info: run -all
+ModelSim-Altera Info: # End time: 23:53:39 on Jun 12,2019, Elapsed time: 0:18:41
+ModelSim-Altera Info: # Errors: 0, Warnings: 4
+Error: Errors encountered while running modelsim do file
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "launch_sim" line 1)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+                set savedCode $::errorCode
+                set savedInfo $::errorInfo
+                error $result $..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+            set status 1
+            if [ info exists ::errorCode ] {
+                set save..."
+    (procedure "run_sim" line 74)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+            set savedCode $::errorCode
+            set savedInfo $::errorInfo
+            error "$result" $savedInfo ..."
+    (procedure "run_eda_simulation_tool" line 334)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"

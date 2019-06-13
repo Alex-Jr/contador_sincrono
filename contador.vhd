@@ -6,6 +6,7 @@ entity contador is
 
 port (
 		clock : in std_logic;
+		reset : in std_logic;
 		switch : in std_logic;
 		LED00_out : out std_logic_vector(0 to 6);
 		LED01_out : out std_logic_vector(0 to 6);
@@ -26,10 +27,10 @@ signal clockcounter: integer range 0 to 24999999;
 begin
 
 process (clock)
-	begin
-		if (rising_edge(clock)) then
+	begin	
+		if rising_edge(clock) then
 			if (clockcounter = 3) then
-				clockcounter <= 0;
+				clockcounter <= 0;			
 				if switch = '0'  then --soma de um em um
 					if contagem00 = "1111" then
 						if contagem01 = "1111" then
@@ -59,6 +60,13 @@ process (clock)
 					end if;
 					contagem00 <= contagem00 - 1;
 				end if;
+				
+				if reset = '0' then
+					contagem00 <= "0000";
+					contagem10 <= "0000";
+					contagem01 <= "0000";
+					contagem11 <= "0000";
+				end if;	
 				
 				case contagem00 is
 					when "0000" => LED00_out  <= "0000001"; -- 0
