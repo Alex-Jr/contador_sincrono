@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LED_contagem",
+					"strict" : false
+				},
+				{
 					"name" : "LED00_out[6]",
 					"strict" : false
 				},
@@ -116,15 +120,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "s_contagem",
+					"strict" : false
+				},
+				{
 					"name" : "clock",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "s_stop",
 					"strict" : false
 				},
 				{
-					"name" : "switch",
+					"name" : "b_reset",
 					"strict" : false
 				}
 			]

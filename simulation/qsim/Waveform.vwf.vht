@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "06/13/2019 00:02:30"
+-- Generated on "06/13/2019 02:04:55"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -33,35 +33,44 @@ END contador_vhd_vec_tst;
 ARCHITECTURE contador_arch OF contador_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL b_reset : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
 SIGNAL LED00_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED01_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED10_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED11_out : STD_LOGIC_VECTOR(0 TO 6);
-SIGNAL reset : STD_LOGIC;
-SIGNAL switch : STD_LOGIC;
+SIGNAL LED_contagem : STD_LOGIC;
+SIGNAL LED_parado : STD_LOGIC;
+SIGNAL s_contagem : STD_LOGIC;
+SIGNAL s_stop : STD_LOGIC;
 COMPONENT contador
 	PORT (
+	b_reset : IN STD_LOGIC;
 	clock : IN STD_LOGIC;
 	LED00_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED01_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED10_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED11_out : OUT STD_LOGIC_VECTOR(0 TO 6);
-	reset : IN STD_LOGIC;
-	switch : IN STD_LOGIC
+	LED_contagem : OUT STD_LOGIC;
+	LED_parado : OUT STD_LOGIC;
+	s_contagem : IN STD_LOGIC;
+	s_stop : IN STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
 	i1 : contador
 	PORT MAP (
 -- list connections between master ports and signals
+	b_reset => b_reset,
 	clock => clock,
 	LED00_out => LED00_out,
 	LED01_out => LED01_out,
 	LED10_out => LED10_out,
 	LED11_out => LED11_out,
-	reset => reset,
-	switch => switch
+	LED_contagem => LED_contagem,
+	LED_parado => LED_parado,
+	s_contagem => s_contagem,
+	s_stop => s_stop
 	);
 
 -- clock
@@ -76,27 +85,41 @@ LOOP
 END LOOP;
 END PROCESS t_prcs_clock;
 
--- switch
-t_prcs_switch: PROCESS
+-- s_contagem
+t_prcs_s_contagem: PROCESS
 BEGIN
-LOOP
-	switch <= '0';
-	WAIT FOR 500000 ps;
-	switch <= '1';
-	WAIT FOR 500000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_switch;
+	s_contagem <= '0';
+	WAIT FOR 150000 ps;
+	s_contagem <= '1';
+	WAIT FOR 600000 ps;
+	s_contagem <= '0';
+	WAIT FOR 150000 ps;
+	s_contagem <= '1';
+WAIT;
+END PROCESS t_prcs_s_contagem;
 
--- reset
-t_prcs_reset: PROCESS
+-- s_stop
+t_prcs_s_stop: PROCESS
 BEGIN
 LOOP
-	reset <= '0';
-	WAIT FOR 250000 ps;
-	reset <= '1';
-	WAIT FOR 250000 ps;
+	s_stop <= '0';
+	WAIT FOR 85000 ps;
+	s_stop <= '1';
+	WAIT FOR 15000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
-END PROCESS t_prcs_reset;
+END PROCESS t_prcs_s_stop;
+
+-- b_reset
+t_prcs_b_reset: PROCESS
+BEGIN
+	b_reset <= '0';
+	WAIT FOR 80000 ps;
+	b_reset <= '1';
+	WAIT FOR 720000 ps;
+	b_reset <= '0';
+	WAIT FOR 80000 ps;
+	b_reset <= '1';
+WAIT;
+END PROCESS t_prcs_b_reset;
 END contador_arch;

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/projetos/vhdl/simulation/qsim
 Econtador
-Z1 w1560394952
+Z1 w1560402298
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
@@ -24,13 +24,13 @@ Z11 8contador.vho
 Z12 Fcontador.vho
 l0
 L38
-VaP4^AVM7MkljRWUm1`CgH1
-!s100 39lQ85`6NzZ@OVhfBd:DJ0
+V02PW;bFAl<5l?@<A4Hn9K1
+!s100 K:<l92@V[mJml7aS]DGS^3
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1560394954
+Z14 !s110 1560402299
 !i10b 1
-Z15 !s108 1560394953.000000
+Z15 !s108 1560402299.000000
 Z16 !s90 -work|work|contador.vho|
 Z17 !s107 contador.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 8 contador 0 22 aP4^AVM7MkljRWUm1`CgH1
-l283
-L84
-Vo9T=1aHb4jk6WmDzIaXJ61
-!s100 b=K1QFU4H?D8V8C1RiUO53
+DEx4 work 8 contador 0 22 02PW;bFAl<5l?@<A4Hn9K1
+l285
+L90
+V2G4oeV:`DG1P:OT^0l52;1
+!s100 Ch;SAH?FDhd`V4=P[HA900
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-Z20 w1560394950
+Z20 w1560402295
 R8
 R9
 R0
@@ -76,27 +76,27 @@ R13
 32
 R14
 !i10b 1
-Z23 !s108 1560394954.000000
-Z24 !s90 -work|work|Waveform.vwf.vht|
-Z25 !s107 Waveform.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
 !i113 1
 R18
 R19
 Acontador_arch
 R8
 R9
-Z26 DEx4 work 20 contador_vhd_vec_tst 0 22 ^D>G1RMko;40zZhR3o7bL3
-l54
+Z25 DEx4 work 20 contador_vhd_vec_tst 0 22 ^D>G1RMko;40zZhR3o7bL3
+l60
 L33
-Z27 V2VgjJHgV;h?:`TWnGDUMd2
-Z28 !s100 4G@=<BGKJGZ1a0^gHme?c2
+V9?5e93;N2YCO2h_:1FG:k3
+!s100 B6k_nIa3m;?S:P6`Y<1kU2
 R13
 32
 R14
 !i10b 1
+R15
 R23
 R24
-R25
 !i113 1
 R18
 R19

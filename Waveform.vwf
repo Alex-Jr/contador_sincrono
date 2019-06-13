@@ -26,6 +26,10 @@ quit -f
 
 
 
+
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -44,6 +48,10 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
+
 
 
 
@@ -417,7 +425,7 @@ SIGNAL("LED11_out[0]")
 	PARENT = "LED11_out";
 }
 
-SIGNAL("switch")
+SIGNAL("s_contagem")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -427,7 +435,17 @@ SIGNAL("switch")
 	PARENT = "";
 }
 
-SIGNAL("reset")
+SIGNAL("s_stop")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("b_reset")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -703,7 +721,7 @@ TRANSITION_LIST("LED11_out[0]")
 	}
 }
 
-TRANSITION_LIST("switch")
+TRANSITION_LIST("s_contagem")
 {
 	NODE
 	{
@@ -711,23 +729,41 @@ TRANSITION_LIST("switch")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 500.0;
-			LEVEL 1 FOR 500.0;
+			LEVEL 0 FOR 150.0;
+			LEVEL 1 FOR 600.0;
 		}
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 100.0;
 	}
 }
 
-TRANSITION_LIST("reset")
+TRANSITION_LIST("s_stop")
 {
 	NODE
 	{
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 2;
-			LEVEL 0 FOR 250.0;
-			LEVEL 1 FOR 250.0;
+			REPEAT = 10;
+			LEVEL 0 FOR 85.0;
+			LEVEL 1 FOR 15.0;
 		}
+	}
+}
+
+TRANSITION_LIST("b_reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 720.0;
+		}
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 120.0;
 	}
 }
 
@@ -1062,7 +1098,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "switch";
+	CHANNEL = "s_contagem";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 33;
@@ -1071,10 +1107,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "reset";
+	CHANNEL = "s_stop";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 34;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "b_reset";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 35;
 	TREE_LEVEL = 0;
 }
 

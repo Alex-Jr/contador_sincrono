@@ -6,8 +6,11 @@ entity contador is
 
 port (
 		clock : in std_logic;
-		reset : in std_logic;
-		switch : in std_logic;
+		b_reset : in std_logic;
+		s_stop : in std_logic;
+		s_contagem : in std_logic;
+		LED_parado : out std_logic;
+		LED_contagem : out std_logic;
 		LED00_out : out std_logic_vector(0 to 6);
 		LED01_out : out std_logic_vector(0 to 6);
 		LED10_out : out std_logic_vector(0 to 6);
@@ -28,10 +31,12 @@ begin
 
 process (clock)
 	begin	
-		if rising_edge(clock) then
+		if rising_edge(clock) and s_stop = '0' then -- Stop = 0 <=> Continue
 			if (clockcounter = 3) then 	--Redutor do clock
-				clockcounter <= 0;			
-				if switch = '0'  then 	--Contador Progressivo
+				clockcounter <= 0;
+	
+				LED_contagem <= s_contagem; -- Ativa o LED9 da Contagem
+				if s_contagem = '0'  then 	-- Contador Progressivo
 					if contagem00 = "1111" then
 						if contagem01 = "1111" then
 							if contagem10 = "1111" then
@@ -61,12 +66,12 @@ process (clock)
 					contagem00 <= contagem00 - 1; 	-- Fim do Contador Regressivo
 				end if;
 				
-				if reset = '0' then 	-- RESET
+				if b_reset = '0' then 	-- RESET
 					contagem00 <= "0000";
 					contagem01 <= "0000";
 					contagem10 <= "0000";
 					contagem11 <= "0000";
-				end if;	
+				end if;		
 				
 				case contagem00 is 	--Ativa as LEDS
 					when "0000" => LED00_out  <= "0000001"; -- 0
@@ -146,6 +151,7 @@ process (clock)
 				
 			else
 				clockcounter <= clockcounter + 1;
+
 			end if;
 		end if;	
 end process;
