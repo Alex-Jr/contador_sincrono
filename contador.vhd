@@ -18,7 +18,7 @@ end contador;
 
 architecture comportamental of contador is 
 
-signal contagem00 :std_logic_vector(3 downto 0);
+signal contagem00 :std_logic_vector(3 downto 0); --Uma contagem para cada Display
 signal contagem01 :std_logic_vector(3 downto 0);
 signal contagem10 :std_logic_vector(3 downto 0);
 signal contagem11 :std_logic_vector(3 downto 0);
@@ -29,9 +29,9 @@ begin
 process (clock)
 	begin	
 		if rising_edge(clock) then
-			if (clockcounter = 3) then
+			if (clockcounter = 3) then 	--Redutor do clock
 				clockcounter <= 0;			
-				if switch = '0'  then --soma de um em um
+				if switch = '0'  then 	--Contador Progressivo
 					if contagem00 = "1111" then
 						if contagem01 = "1111" then
 							if contagem10 = "1111" then
@@ -44,9 +44,9 @@ process (clock)
 						contagem01 <= contagem01 + 1;
 						contagem00 <= "0000";
 					end if;
-					contagem00 <= contagem00 + 1;
+					contagem00 <= contagem00 + 1; 	-- Fim do Contador Progressivo
 				else
-					if contagem00 = "0000" then
+					if contagem00 = "0000" then 	-- Contador Regressivo
 						if contagem01 = "0000" then
 							if contagem10 = "0000" then
 								contagem11 <= contagem11 - 1;
@@ -58,17 +58,17 @@ process (clock)
 						contagem01 <= contagem01 - 1;
 						contagem00 <= "1111";
 					end if;
-					contagem00 <= contagem00 - 1;
+					contagem00 <= contagem00 - 1; 	-- Fim do Contador Regressivo
 				end if;
 				
-				if reset = '0' then
+				if reset = '0' then 	-- RESET
 					contagem00 <= "0000";
-					contagem10 <= "0000";
 					contagem01 <= "0000";
+					contagem10 <= "0000";
 					contagem11 <= "0000";
 				end if;	
 				
-				case contagem00 is
+				case contagem00 is 	--Ativa as LEDS
 					when "0000" => LED00_out  <= "0000001"; -- 0
 					when "0001" => LED00_out  <= "1001111"; -- 1
 					when "0010" => LED00_out  <= "0010010"; -- 2
@@ -87,7 +87,7 @@ process (clock)
 					when "1111" => LED00_out  <= "0111000"; -- F
 				end case;
 			
-				case contagem01 is
+				case contagem01 is	--Ativa as LEDS
 					when "0000" => LED01_out  <= "0000001"; -- 0
 					when "0001" => LED01_out  <= "1001111"; -- 1
 					when "0010" => LED01_out  <= "0010010"; -- 2
@@ -106,7 +106,7 @@ process (clock)
 					when "1111" => LED01_out  <= "0111000"; -- F
 				end case;
 				
-				case contagem10 is
+				case contagem10 is	--Ativa as LEDS
 					when "0000" => LED10_out  <= "0000001"; -- 0
 					when "0001" => LED10_out  <= "1001111"; -- 1
 					when "0010" => LED10_out  <= "0010010"; -- 2
@@ -125,7 +125,7 @@ process (clock)
 					when "1111" => LED10_out  <= "0111000"; -- F
 				end case;
 				
-				case contagem11 is
+				case contagem11 is	--Ativa as LEDS
 					when "0000" => LED11_out  <= "0000001"; -- 0
 					when "0001" => LED11_out  <= "1001111"; -- 1
 					when "0010" => LED11_out  <= "0010010"; -- 2
