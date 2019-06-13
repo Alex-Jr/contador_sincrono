@@ -9,7 +9,7 @@ port (
 		b_reset : in std_logic;
 		s_stop : in std_logic;
 		s_contagem : in std_logic;
-		LED_parado : out std_logic;
+		LED_stop : out std_logic;
 		LED_contagem : out std_logic;
 		LED00_out : out std_logic_vector(0 to 6);
 		LED01_out : out std_logic_vector(0 to 6);
@@ -25,53 +25,55 @@ signal contagem00 :std_logic_vector(3 downto 0); --Uma contagem para cada Displa
 signal contagem01 :std_logic_vector(3 downto 0);
 signal contagem10 :std_logic_vector(3 downto 0);
 signal contagem11 :std_logic_vector(3 downto 0);
-signal clockcounter: integer range 0 to 24999999;
+signal clockcounter: integer range 0 to 24999999; --MAX 1 segundo
 
 begin
 
 process (clock)
 	begin	
-		if rising_edge(clock) and s_stop = '0' then -- Stop = 0 <=> Continue
-			if (clockcounter = 3) then 	--Redutor do clock
+		if b_reset = '0' then 	-- RESET na contagem
+				contagem00 <= "0000";
+				contagem01 <= "0000";
+				contagem10 <= "0000";
+				contagem11 <= "0000";
+		elsif s_stop = '1' then --STOP
+			LED_stop <= '1';	--Indica que o STOP está ativo
+		elsif rising_edge(clock)then -- Stop = 0 <=> Continue
+			if (clockcounter = 1) then 	--Redutor do clock
 				clockcounter <= 0;
-	
+				
+				LED_stop <= '0'; -- Desativa a LED0 do STOP
 				LED_contagem <= s_contagem; -- Ativa o LED9 da Contagem
 				if s_contagem = '0'  then 	-- Contador Progressivo
 					if contagem00 = "1111" then
 						if contagem01 = "1111" then
 							if contagem10 = "1111" then
-								contagem11 <= contagem11 + 1;
+								contagem11 <= contagem11 + '1';
 								contagem10 <= "0000";
 							end if;
-							contagem10 <= contagem10 + 1;
+							contagem10 <= contagem10 + '1';
 							contagem01 <= "0000";
 						end if;
-						contagem01 <= contagem01 + 1;
+						contagem01 <= contagem01 + '1';
 						contagem00 <= "0000";
 					end if;
-					contagem00 <= contagem00 + 1; 	-- Fim do Contador Progressivo
+					contagem00 <= contagem00 + '1'; 	-- Fim do Contador Progressivo
 				else
 					if contagem00 = "0000" then 	-- Contador Regressivo
 						if contagem01 = "0000" then
 							if contagem10 = "0000" then
-								contagem11 <= contagem11 - 1;
+								contagem11 <= contagem11 - '1';
 								contagem10 <= "1111";
 							end if;
-							contagem10 <= contagem10 - 1;
+							contagem10 <= contagem10 - '1';
 							contagem01 <= "1111";
 						end if;
-						contagem01 <= contagem01 - 1;
+						contagem01 <= contagem01 - '1';
 						contagem00 <= "1111";
 					end if;
-					contagem00 <= contagem00 - 1; 	-- Fim do Contador Regressivo
+					contagem00 <= contagem00 - '1'; 	-- Fim do Contador Regressivo
 				end if;
-				
-				if b_reset = '0' then 	-- RESET
-					contagem00 <= "0000";
-					contagem01 <= "0000";
-					contagem10 <= "0000";
-					contagem11 <= "0000";
-				end if;		
+					
 				
 				case contagem00 is 	--Ativa as LEDS
 					when "0000" => LED00_out  <= "0000001"; -- 0
@@ -151,7 +153,6 @@ process (clock)
 				
 			else
 				clockcounter <= clockcounter + 1;
-
 			end if;
 		end if;	
 end process;

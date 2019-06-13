@@ -363,7 +363,7 @@ GND                          : F3        : gnd    :                   :         
 GND                          : F4        : gnd    :                   :         :           :                
 nCONFIG                      : F5        :        :                   :         : 9A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8A        :                
-LED_parado                   : F7        : output : 2.5 V             :         : 8A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8A        :                
 VCCPGM                       : F8        : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCCPD7A8A                    : F9        : power  :                   : 2.5V    : 7A, 8A    :                
 GND                          : F10       : gnd    :                   :         :           :                
@@ -692,7 +692,7 @@ LED10_out[4]                 : V20       : output : 3.3-V LVTTL       :         
 VCCIO5A                      : V21       : power  :                   : 3.3V    : 5A        :                
 LED10_out[3]                 : V22       : output : 3.3-V LVTTL       :         : 5A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V23       :        :                   :         : 5B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V24       :        :                   :         : 5B        :                
+LED_stop                     : V24       : output : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V25       :        :                   :         : 5B        :                
 GND                          : V26       : gnd    :                   :         :           :                
 GND                          : W1        : gnd    :                   :         :           :                

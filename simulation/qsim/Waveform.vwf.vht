@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "06/13/2019 02:04:55"
+-- Generated on "06/13/2019 02:48:50"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -40,7 +40,7 @@ SIGNAL LED01_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED10_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED11_out : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL LED_contagem : STD_LOGIC;
-SIGNAL LED_parado : STD_LOGIC;
+SIGNAL LED_stop : STD_LOGIC;
 SIGNAL s_contagem : STD_LOGIC;
 SIGNAL s_stop : STD_LOGIC;
 COMPONENT contador
@@ -52,7 +52,7 @@ COMPONENT contador
 	LED10_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED11_out : OUT STD_LOGIC_VECTOR(0 TO 6);
 	LED_contagem : OUT STD_LOGIC;
-	LED_parado : OUT STD_LOGIC;
+	LED_stop : OUT STD_LOGIC;
 	s_contagem : IN STD_LOGIC;
 	s_stop : IN STD_LOGIC
 	);
@@ -68,7 +68,7 @@ BEGIN
 	LED10_out => LED10_out,
 	LED11_out => LED11_out,
 	LED_contagem => LED_contagem,
-	LED_parado => LED_parado,
+	LED_stop => LED_stop,
 	s_contagem => s_contagem,
 	s_stop => s_stop
 	);

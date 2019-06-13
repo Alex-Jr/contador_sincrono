@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LED_stop",
+					"strict" : false
+				},
+				{
 					"name" : "LED_contagem",
 					"strict" : false
 				},
@@ -120,7 +124,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "s_contagem",
+					"name" : "b_reset",
 					"strict" : false
 				},
 				{
@@ -132,7 +136,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "b_reset",
+					"name" : "s_contagem",
 					"strict" : false
 				}
 			]

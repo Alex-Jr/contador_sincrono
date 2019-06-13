@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/projetos/vhdl/simulation/modelsim
 Econtador
-Z1 w1560401684
+Z1 w1560404893
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
@@ -24,13 +24,13 @@ Z11 8contador.vho
 Z12 Fcontador.vho
 l0
 L38
-VlgB_Qo;?Bj4jE^]JIh@Gf0
-!s100 K:<l92@V[mJml7aS]DGS^3
+Vg_m0lbY@G;1<?dbgRFl9D0
+!s100 ML:2>6AQLXW=eg6@4o@nM2
 Z13 OV;C;10.5b;63
 31
-Z14 !s110 1560401693
+Z14 !s110 1560404901
 !i10b 1
-Z15 !s108 1560401693.000000
+Z15 !s108 1560404901.000000
 Z16 !s90 -reportprogress|300|-93|-work|work|contador.vho|
 Z17 !s107 contador.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 8 contador 0 22 lgB_Qo;?Bj4jE^]JIh@Gf0
-l285
+DEx4 work 8 contador 0 22 g_m0lbY@G;1<?dbgRFl9D0
+l296
 L90
-VN^fBnM?aKf@Q@N1=:GCZD0
-!s100 TkNEaF6HIMWNfjXEiD3M42
+VzP?JPz9@[EeY3n6OJLkM63
+!s100 ADYlhWlHG2I9Pj7PcPbF]3
 R13
 31
 R14

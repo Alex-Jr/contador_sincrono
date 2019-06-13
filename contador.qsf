@@ -120,9 +120,9 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_location_assignment PIN_P11 -to b_reset
 set_location_assignment PIN_AE19 -to s_contagem
 set_location_assignment PIN_J10 -to LED_contagem
-set_location_assignment PIN_F7 -to LED_parado
 set_location_assignment PIN_AC9 -to s_stop
 set_instance_assignment -name IO_STANDARD "1.2 V" -to s_stop
 set_instance_assignment -name IO_STANDARD "1.2 V" -to s_contagem
 set_instance_assignment -name IO_STANDARD "1.2 V" -to b_reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_F7 -to LED_stop
